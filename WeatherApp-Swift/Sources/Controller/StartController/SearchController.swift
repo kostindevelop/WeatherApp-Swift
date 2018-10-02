@@ -19,6 +19,7 @@ class SearchController: UIViewController {
         searchBar.delegate = self
     }
 }
+
 extension SearchController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

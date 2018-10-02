@@ -10,9 +10,16 @@ import UIKit
 
 class DetailsController: UIViewController {
     
+    @IBOutlet weak var labelCity: UILabel!
+    @IBOutlet weak var labelOblast: UILabel!
+    @IBOutlet weak var labelTemp: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         print("DetailsController")
+    }
+    
+    @IBAction func dismisDetaileController(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil )
     }
     
 }
