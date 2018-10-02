@@ -24,7 +24,22 @@ extension SearchController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let requestString = Config.baseUrl + searchBar.text!
-        networker.requestInWeather(url: requestString)
+        networker.requestInWeather(url: requestString) { [weak self] (weather, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let weather = weather {
+                self?.presentDetailController(weather: weather)
+            }
+        }
     }
+    
+    func presentDetailController(weather: Weather) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "detailController") as? DetailsController
+            else { return }
+        vc.weather = weather
+        present(vc, animated: true)
+    }
+    
 }
 

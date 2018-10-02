@@ -13,9 +13,14 @@ class DetailsController: UIViewController {
     @IBOutlet weak var labelCity: UILabel!
     @IBOutlet weak var labelOblast: UILabel!
     @IBOutlet weak var labelTemp: UILabel!
+    
+    var weather: Weather?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("DetailsController")
+        labelCity.text = weather?.city
+        
     }
     
     @IBAction func dismisDetaileController(_ sender: UIButton) {

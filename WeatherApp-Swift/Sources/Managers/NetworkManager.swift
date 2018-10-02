@@ -8,10 +8,11 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
 class NetworkManager {
     
-    func requestInWeather(url: String) {
+    func requestInWeather(url: String, callback: @escaping (_ weather: Weather?, _ error: Error?) -> ()) {
         let urlRequest = URL(string: url)
         var request = URLRequest(url: urlRequest!)
         request.httpMethod = "GET"
@@ -28,12 +29,16 @@ class NetworkManager {
             print(data)
             guard
                 let json = data.json,
-                let dict = json as? [String: Any]
+                let weather = Mapper<Weather>().map(JSONObject: json)
                 else {
+                    callback(nil, error)
                     return
                         print("DATA RETURN NIL")
             }
-            print(dict)
+            DispatchQueue.main.async {
+                callback(weather, nil)
+            }
+            print(weather)
         }
         task.resume()
     }
