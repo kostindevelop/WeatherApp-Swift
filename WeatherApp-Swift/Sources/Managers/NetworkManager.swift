@@ -12,24 +12,21 @@ import ObjectMapper
 
 class NetworkManager {
     
-    func requestInWeather(url: String, callback: @escaping (_ weather: Weather?, _ error: Error?) -> ()) {
-        let urlRequest = URL(string: url)
+    func requestInWeather(search: String, callback: @escaping (_ weather: WeatherMappable?, _ error: Error?) -> ()) {
+        let urlRequest = URL(string: Config.baseUrl +  search)
         var request = URLRequest(url: urlRequest!)
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
             if error != nil {
                 print(error!.localizedDescription)
-                DispatchQueue.main.async {
-                    print("DispatchQueue.main.async")
-                }
             }
             
             guard let data = data else { return }
             print(data)
             guard
                 let json = data.json,
-                let weather = Mapper<Weather>().map(JSONObject: json)
+                let weather = Mapper<WeatherMappable>().map(JSONObject: json)
                 else {
                     callback(nil, error)
                     return

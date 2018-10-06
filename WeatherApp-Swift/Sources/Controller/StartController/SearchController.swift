@@ -12,19 +12,21 @@ import Foundation
 class SearchController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
-    var networker = NetworkManager()
+    var repository = Repository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        repository.getCities { (cities, error) in
+            print(cities)
+        }
     }
 }
 
 extension SearchController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let requestString = Config.baseUrl + searchBar.text!
-        networker.requestInWeather(url: requestString) { [weak self] (weather, error) in
+        repository.getWeather(city: searchBar.text!) { [weak self] (weather, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else if let weather = weather {

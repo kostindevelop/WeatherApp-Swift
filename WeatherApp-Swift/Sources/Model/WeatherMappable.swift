@@ -1,5 +1,5 @@
 //
-//  WeatherModel.swift
+//  WeatherMappable.swift
 //  WeatherApp-Swift
 //
 //  Created by Konstantin on 02/10/2018.
@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-class Weather: Mappable {
+class WeatherMappable: Mappable {
     var city: String?
     var temperature: String?
     
