@@ -18,7 +18,7 @@ class SearchController: UIViewController {
         super.viewDidLoad()
         searchBar.delegate = self
         repository.getCities { (cities, error) in
-            print(cities)
+            print(cities as Any)
         }
     }
 }

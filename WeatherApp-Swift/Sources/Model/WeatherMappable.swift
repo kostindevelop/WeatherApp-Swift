@@ -11,7 +11,7 @@ import ObjectMapper
 class WeatherMappable: Mappable {
     var country: String?
     var city: String?
-    var temperature: String?
+    var temperature: Int?
     
     required init?(map: Map) {
         

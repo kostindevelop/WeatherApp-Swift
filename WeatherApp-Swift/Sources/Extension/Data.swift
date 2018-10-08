@@ -12,8 +12,5 @@ extension Data {
     var json: Any? {
         return try? JSONSerialization.jsonObject(with: self, options: [])
     }
-    
-    
-    
 }
 

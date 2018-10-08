@@ -21,7 +21,7 @@ class DetailsController: UIViewController {
         print("DetailsController")
         labelCountry.text = weather?.country
         labelCity.text = weather?.city
-        labelTemp.text = weather?.temperature
+        labelTemp.text = String(weather!.temperature)
         
     }
     

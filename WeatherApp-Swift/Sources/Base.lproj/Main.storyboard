@@ -67,18 +67,18 @@
                                     <action selector="dismisDetaileController:" destination="9dc-Dx-azv" eventType="touchUpInside" id="sFO-yP-qfo"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHk-cO-4dF">
-                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="t" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHk-cO-4dF">
+                                <rect key="frame" x="157.5" y="240" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="aNy-gQ-kHo"/>
-                                    <constraint firstAttribute="height" constant="100" id="dgt-3f-tqY"/>
+                                    <constraint firstAttribute="width" constant="60" id="aNy-gQ-kHo"/>
+                                    <constraint firstAttribute="height" constant="60" id="dgt-3f-tqY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="o" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obu-v8-ey3">
-                                <rect key="frame" x="224.5" y="265" width="13" height="28"/>
+                                <rect key="frame" x="204.5" y="225" width="13" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="KU2-2C-M6V"/>
                                     <constraint firstAttribute="width" constant="13" id="T3z-Rb-X6S"/>
@@ -99,7 +99,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kHk-cO-4dF" firstAttribute="centerY" secondItem="lf8-KE-shv" secondAttribute="centerY" id="12W-xZ-WUC"/>
+                            <constraint firstItem="kHk-cO-4dF" firstAttribute="top" secondItem="prc-DI-MIx" secondAttribute="bottom" constant="50" id="D0S-ai-IN3"/>
                             <constraint firstItem="425-LC-9Ny" firstAttribute="trailing" secondItem="prc-DI-MIx" secondAttribute="trailing" constant="30" id="FcD-wJ-r1C"/>
                             <constraint firstItem="AWW-6o-cXq" firstAttribute="top" secondItem="425-LC-9Ny" secondAttribute="top" constant="80" id="Gtq-f0-dEi"/>
                             <constraint firstItem="425-LC-9Ny" firstAttribute="trailing" secondItem="AWW-6o-cXq" secondAttribute="trailing" constant="30" id="IVB-ah-jq8"/>
@@ -108,7 +108,7 @@
                             <constraint firstItem="AWW-6o-cXq" firstAttribute="leading" secondItem="425-LC-9Ny" secondAttribute="leading" constant="30" id="UI9-Hi-zZk"/>
                             <constraint firstItem="prc-DI-MIx" firstAttribute="leading" secondItem="425-LC-9Ny" secondAttribute="leading" constant="30" id="afv-fN-Ct7"/>
                             <constraint firstItem="kHk-cO-4dF" firstAttribute="centerX" secondItem="lf8-KE-shv" secondAttribute="centerX" id="w1D-CD-OA0"/>
-                            <constraint firstItem="Obu-v8-ey3" firstAttribute="top" secondItem="prc-DI-MIx" secondAttribute="bottom" constant="75" id="ysJ-oY-7b5"/>
+                            <constraint firstItem="Obu-v8-ey3" firstAttribute="top" secondItem="prc-DI-MIx" secondAttribute="bottom" constant="35" id="ysJ-oY-7b5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="425-LC-9Ny"/>
                     </view>

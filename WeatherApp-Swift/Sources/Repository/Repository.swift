@@ -21,7 +21,7 @@ class Repository: NSObject {
             if let error = error {
                 print(error.localizedDescription)
             } else if let result = result {
-                let weather = Weather(country: result.country ?? "", city: result.city ?? "", temperature: result.temperature ?? "")
+                let weather = Weather(country: result.country ?? "", city: result.city ?? "", temperature: result.temperature!)
                 callback(weather, nil)
                 
                 self?.storeManager.save(weather: weather)

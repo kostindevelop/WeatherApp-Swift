@@ -11,5 +11,5 @@ import RealmSwift
 class WeatherRealm: Object {
     @objc var country = ""
     @objc var city = ""
-    @objc var temperature = ""
+    @objc var temperature = 0
 }
