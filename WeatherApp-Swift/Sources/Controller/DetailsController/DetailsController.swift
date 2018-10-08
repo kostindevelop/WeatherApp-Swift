@@ -10,8 +10,8 @@ import UIKit
 
 class DetailsController: UIViewController {
     
+    @IBOutlet weak var labelCountry: UILabel!
     @IBOutlet weak var labelCity: UILabel!
-    @IBOutlet weak var labelOblast: UILabel!
     @IBOutlet weak var labelTemp: UILabel!
     
     var weather: Weather?
@@ -19,7 +19,9 @@ class DetailsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("DetailsController")
+        labelCountry.text = weather?.country
         labelCity.text = weather?.city
+        labelTemp.text = weather?.temperature
         
     }
     

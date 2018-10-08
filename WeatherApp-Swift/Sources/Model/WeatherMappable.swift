@@ -9,6 +9,7 @@
 import ObjectMapper
 
 class WeatherMappable: Mappable {
+    var country: String?
     var city: String?
     var temperature: String?
     
@@ -17,7 +18,8 @@ class WeatherMappable: Mappable {
     }
     
     func mapping(map: Map) {
+        country         <- map["location.country"]
         city            <- map["location.name"]
-        temperature     <- map["temp_c"]
+        temperature     <- map["current.temp_c"]
     }
 }

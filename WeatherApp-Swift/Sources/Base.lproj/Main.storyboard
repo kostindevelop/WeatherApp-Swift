@@ -37,6 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="289" y="100"/>
         </scene>
         <!--Details Controller-->
         <scene sceneID="hmw-0F-DV5">
@@ -46,7 +47,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWW-6o-cXq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="country" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWW-6o-cXq">
                                 <rect key="frame" x="30" y="100" width="315" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ExJ-ds-8si"/>
@@ -86,7 +87,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oblast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prc-DI-MIx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prc-DI-MIx">
                                 <rect key="frame" x="30" y="150" width="315" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jTb-f2-6nR"/>
@@ -112,14 +113,14 @@
                         <viewLayoutGuide key="safeArea" id="425-LC-9Ny"/>
                     </view>
                     <connections>
-                        <outlet property="labelCity" destination="AWW-6o-cXq" id="KbF-Do-FGd"/>
-                        <outlet property="labelOblast" destination="prc-DI-MIx" id="xES-ss-wze"/>
+                        <outlet property="labelCity" destination="prc-DI-MIx" id="LEC-IZ-pzC"/>
+                        <outlet property="labelCountry" destination="AWW-6o-cXq" id="Vm9-V5-DA2"/>
                         <outlet property="labelTemp" destination="kHk-cO-4dF" id="yW4-lW-edX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4F-hl-s6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892" y="119.1904047976012"/>
+            <point key="canvasLocation" x="1338" y="101"/>
         </scene>
     </scenes>
 </document>

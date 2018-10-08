@@ -5,7 +5,7 @@ target 'WeatherApp-Swift' do
   use_frameworks!
 
 	pod 'Alamofire'
-        pod 'ObjectMapper'
-	pod 'RealmSwift'
+    pod 'ObjectMapper'
+    pod 'RealmSwift'
 
 end

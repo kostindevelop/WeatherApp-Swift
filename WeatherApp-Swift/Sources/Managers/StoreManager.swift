@@ -17,6 +17,7 @@ class StoreManager: NSObject {
     func save(weather: Weather){
         // save weather to store
         let weatherRealm = WeatherRealm()
+        weatherRealm.country = weather.country
         weatherRealm.city = weather.city
         weatherRealm.temperature = weather.temperature
         
@@ -29,8 +30,8 @@ class StoreManager: NSObject {
     func getCities(callback: (_ cities: Results<WeatherRealm>, _ error: Error?) -> ()){
         // load from store and return
         let realm = try! Realm()
-        let cities = Array(realm.objects(WeatherRealm.self))
-//        callback(cities, nil)
+        let cities = realm.objects(WeatherRealm.self)
+        callback(cities, nil)
     }
     
 }

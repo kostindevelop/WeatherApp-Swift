@@ -9,6 +9,7 @@
 import Foundation
 
 struct Weather {
+    var country: String
     var city: String
     var temperature: String
 }

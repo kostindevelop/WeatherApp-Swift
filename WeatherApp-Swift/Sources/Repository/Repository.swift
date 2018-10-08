@@ -21,7 +21,7 @@ class Repository: NSObject {
             if let error = error {
                 print(error.localizedDescription)
             } else if let result = result {
-                let weather = Weather(city: result.city!, temperature: result.temperature ?? "")
+                let weather = Weather(country: result.country ?? "", city: result.city ?? "", temperature: result.temperature ?? "")
                 callback(weather, nil)
                 
                 self?.storeManager.save(weather: weather)
@@ -35,8 +35,8 @@ class Repository: NSObject {
             // convert result to weather and return
             print("e")
             var cities: [Weather] = []
-            for w in result {
-                cities.append(Weather(city: w.city, temperature: w.temperature))
+            for element in result {
+                cities.append(Weather(country: element.country, city: element.city, temperature: element.temperature))
             }
 //            let cities = result.map({ Weather(city: $0.first.city, temperature: $0.f.temperature) })
             callback(cities, nil)
