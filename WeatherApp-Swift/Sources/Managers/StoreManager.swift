@@ -27,10 +27,10 @@ class StoreManager: NSObject {
         }
     }
     
-    func getCities(callback: (_ cities: Results<WeatherRealm>, _ error: Error?) -> ()){
+    func getCities(callback: (_ cities: [WeatherRealm], _ error: Error?) -> ()){
         // load from store and return
         let realm = try! Realm()
-        let cities = realm.objects(WeatherRealm.self)
+        let cities = Array(realm.objects(WeatherRealm.self))
         callback(cities, nil)
     }
     
