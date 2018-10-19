@@ -12,8 +12,8 @@ class Repository: NSObject {
     private let networkManager = NetworkManager()
     private let storeManager = StoreManager()
     
-    func getWeather(city: String,_ callback: @escaping (_ weather: Weather?, _ error: Error?) -> ()){
-        storeManager.getWeather(search: city) {
+    func getCities(city: String,_ callback: @escaping (_ weather: Weather?, _ error: Error?) -> ()){
+        storeManager.getCities(search: city) {
             // get object from store
         }
         
@@ -21,7 +21,7 @@ class Repository: NSObject {
             if let error = error {
                 print(error.localizedDescription)
             } else if let result = result {
-                let weather = Weather(country: result.country ?? "", city: result.city ?? "", temperature: result.temperature!)
+                let weather = Weather(country: result.country!, city: result.city!, temperature: result.temperature!)
                 callback(weather, nil)
                 
                 self?.storeManager.save(weather: weather)
@@ -30,8 +30,8 @@ class Repository: NSObject {
         
     }
     
-    func getCities(callback: (_ cities: [Weather]?, _ error: Error?) -> ()) {
-        storeManager.getCities { (result, error) in
+    func getWeather(callback: (_ cities: [Weather]?, _ error: Error?) -> ()) {
+        storeManager.getWeather { (result, error) in
             // convert result to weather and return
             print("e")
             var cities: [Weather] = []

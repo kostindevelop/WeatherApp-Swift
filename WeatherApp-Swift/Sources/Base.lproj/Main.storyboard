@@ -22,17 +22,40 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mcT-49-aAs">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="gT4-2d-ScY">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gT4-2d-ScY" id="Mdd-cH-06W">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="RPb-il-hSN"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="a3e-KB-xPW"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mcT-49-aAs" secondAttribute="bottom" id="F6i-Sw-ZkS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mcT-49-aAs" secondAttribute="trailing" id="XYG-dm-fhh"/>
                             <constraint firstItem="5Es-d7-RI0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dzJ-oJ-C4e"/>
                             <constraint firstItem="5Es-d7-RI0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hSm-tc-p2O"/>
+                            <constraint firstItem="mcT-49-aAs" firstAttribute="top" secondItem="5Es-d7-RI0" secondAttribute="bottom" id="lYC-mP-adk"/>
                             <constraint firstItem="5Es-d7-RI0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="n3y-C6-U0n"/>
+                            <constraint firstItem="mcT-49-aAs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tqE-Mv-PEq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="5Es-d7-RI0" id="KDm-XR-xIO"/>
+                        <outlet property="tableView" destination="mcT-49-aAs" id="UBK-5X-k00"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

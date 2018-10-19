@@ -13,20 +13,28 @@ class SearchController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     var repository = Repository()
+    var storeWeather = [Weather]()
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        repository.getCities { (cities, error) in
-            print(cities as Any)
-        }
+        loadWeather()
+        tableView.separatorStyle = .none
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadWeather()
+        tableView.reloadData()
     }
 }
 
 extension SearchController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        repository.getWeather(city: searchBar.text!) { [weak self] (weather, error) in
+        repository.getCities(city: searchBar.text!) { [weak self] (weather, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else if let weather = weather {
@@ -43,5 +51,36 @@ extension SearchController: UISearchBarDelegate {
         present(vc, animated: true)
     }
     
+    func loadWeather() {
+        repository.getWeather { (weather, error) in
+            print(weather as Any)
+            guard let weather = weather else { return }
+            storeWeather = weather
+        }
+    }
+    
 }
+
+extension SearchController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return storeWeather.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let weather = storeWeather[indexPath.row]
+        cell.textLabel?.text = weather.city
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCell = tableView.indexPathForSelectedRow
+        presentDetailController(weather: storeWeather[(selectedCell?.row)!])
+    }
+    
+}
+
+
 

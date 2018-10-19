@@ -129,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				76712153212C443500652E3D /* WeatherApp-Swift */,
-				76376EEC212D284A0057DA02 /* Resources */,
 				76712152212C443500652E3D /* Products */,
 				85972C3044F7E2813AB11D80 /* Pods */,
 				E1E0329887CFC73589E479EC /* Frameworks */,
@@ -148,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				76376EE9212D27FA0057DA02 /* Sources */,
+				76376EEC212D284A0057DA02 /* Resources */,
 			);
 			path = "WeatherApp-Swift";
 			sourceTree = "<group>";
@@ -462,8 +462,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UH5E4S62N6;
-				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = "$(SRCROOT)/WeatherApp-Swift/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ka.WeatherApp-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -478,8 +481,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UH5E4S62N6;
-				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				INFOPLIST_FILE = "$(SRCROOT)/WeatherApp-Swift/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ka.WeatherApp-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

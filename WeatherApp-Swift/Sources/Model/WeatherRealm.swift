@@ -9,7 +9,7 @@
 import RealmSwift
 
 class WeatherRealm: Object {
-    @objc var country = ""
-    @objc var city = ""
-    @objc var temperature = 0
+    @objc dynamic var country = ""
+    @objc dynamic var city = ""
+    @objc dynamic var temperature = 0
 }

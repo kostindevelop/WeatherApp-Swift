@@ -10,7 +10,7 @@ import RealmSwift
 
 class StoreManager: NSObject {
     
-    func getWeather(search: String, callback: () -> ()){
+    func getCities(search: String, callback: () -> ()){
         
     }
     
@@ -27,7 +27,7 @@ class StoreManager: NSObject {
         }
     }
     
-    func getCities(callback: (_ cities: [WeatherRealm], _ error: Error?) -> ()){
+    func getWeather(callback: (_ weather: [WeatherRealm], _ error: Error?) -> ()){
         // load from store and return
         let realm = try! Realm()
         let cities = Array(realm.objects(WeatherRealm.self))
